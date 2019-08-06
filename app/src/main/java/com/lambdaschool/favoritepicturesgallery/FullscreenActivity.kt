@@ -8,6 +8,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.widget.ImageView
@@ -75,7 +76,39 @@ class FullscreenActivity : AppCompatActivity() {
 
         val intent = intent
         (mContentView as ImageView).setImageURI(Uri.parse(intent.getStringExtra("image")))
+        Log.i(javaClass.simpleName, "onCreate")
     }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i(javaClass.simpleName, "onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i(javaClass.simpleName, "onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i(javaClass.simpleName, "onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i(javaClass.simpleName, "onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i(javaClass.simpleName, "onDestroy")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.i(javaClass.simpleName, "onRestart")
+    }
+
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
